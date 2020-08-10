@@ -1,7 +1,6 @@
 FROM sonarqube:8-community
 
-RUN chmod -R 644 ${SONARQUBE_HOME}/lib/common/sonarqube-community-branch-plugin-*.jar 2>/dev/null && \
-    chown -R sonarqube:sonarqube ${SONARQUBE_HOME}/lib/common/sonarqube-community-branch-plugin-*.jar 2>/dev/null
+COPY --chown=sonarqube:sonarqube sonar.sh ${SONARQUBE_HOME}/bin/
 
 WORKDIR ${SONARQUBE_HOME}
 EXPOSE 9000

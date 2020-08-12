@@ -1,4 +1,4 @@
-FROM sonarqube:8-community
+FROM sonarqube:8.2-community
 
 COPY --chown=sonarqube:sonarqube sonar.sh ${SONARQUBE_HOME}/bin/
 
